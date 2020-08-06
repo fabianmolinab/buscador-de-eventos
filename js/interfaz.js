@@ -15,16 +15,17 @@ class Interfaz {
   imprimirCategorias() {
     const listaCategorias = eventbrite.obtenerCategorias()
       .then(categorias => {
-        const cats = categorias.categorias.categories;
+        const cats = categorias.categories;      
         
-        const selectCategorias = document.getElementById('listado-categorias');
+        const selectCategoria = document.getElementById('listado-categorias');
 
         cats.forEach(cat => {
           const option = document.createElement('option');
           option.value = cat.id;
           option.appendChild(document.createTextNode(cat.name_localized));
-
+          selectCategoria.appendChild(option);
         })
       })
+      
   }
 }
