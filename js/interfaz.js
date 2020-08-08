@@ -26,6 +26,14 @@ class Interfaz {
           selectCategoria.appendChild(option);
         })
       })
-      
+  }
+  mostrarMensaje (mensaje, estilo) {
+    const select = document.getElementById('resultado-eventos');
+    const error = document.createElement('p');
+    
+    error.textContent = mensaje;
+    error.className = estilo;
+    
+    select.appendChild(error);
   }
 }
